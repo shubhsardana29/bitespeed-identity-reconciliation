@@ -9,6 +9,9 @@ const identify_1 = __importDefault(require("./routes/identify"));
 const app = (0, express_1.default)();
 app.use(body_parser_1.default.json());
 app.use('/api', identify_1.default);
+app.get('/', (req, res) => {
+    res.send('Server is Up and running');
+});
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
